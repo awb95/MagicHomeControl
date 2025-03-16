@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -57,19 +58,10 @@
     <Compile Include="ContextMenu.Designer.cs">
       <DependentUpon>ContextMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContextMenuForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ContextMenuForm.Designer.cs">
-      <DependentUpon>ContextMenuForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ContextMenu.resx">
       <DependentUpon>ContextMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ContextMenuForm.resx">
-      <DependentUpon>ContextMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

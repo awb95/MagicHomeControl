@@ -1,6 +1,5 @@
 ﻿using MagicHome;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +12,7 @@ namespace MagicHomeControl
         {
             InitializeComponent();                        
             Task.Run(Init);
-            timer1.Interval = Convert.ToInt32(TimeSpan.FromMinutes(1).TotalMilliseconds);
+            timer1.Interval = Convert.ToInt32(TimeSpan.FromSeconds(5).TotalMilliseconds);
             timer1.Start();
         }
 
@@ -106,9 +105,14 @@ namespace MagicHomeControl
         private async void timer1_Tick(object sender, EventArgs e)
         {
             if (_light == null || !_light.Connected)
+            { 
                 await Init();
+                timer1.Interval = Convert.ToInt32(TimeSpan.FromMinutes(5).TotalMilliseconds);
+            }
             else
+            {
                 await RefreshLight();
+            }                
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
